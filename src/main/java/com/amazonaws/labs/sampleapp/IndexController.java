@@ -51,7 +51,13 @@ public class IndexController {
     @Autowired
     private AmazonAutoScaling autoScaling;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+
+    @RequestMapping(value="/", method = RequestMethod.GET)
+    public String displayIndex(){
+	return "/hello";
+    }
+    
+    @RequestMapping(value = "/dog", method = RequestMethod.GET)
     public String displayIndex(Model model) {
         LOGGER.info("Application name set to: " + applicationName);
         model.addAttribute("applicationName", applicationName);
